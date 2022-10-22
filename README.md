@@ -119,5 +119,25 @@ En la plataforma de Namecheap fue necesario realizar una configuracion de DNS pa
 | *Esta configuracion nos permite redirigir trafico desde nuestro dominio hacia nuestro balanceador de carga y finalmente a nuestra página web* |
 
 
+<a  name="Route53"></a>
+
+## Route 53:globe_with_meridians:
+
+El Amazon Route 53 es una herramienta creada para administrar servicios de DNS, es escalable y de alta disponibilidad en la nube. Permite a los desarrolladores y empresas un método fiable y rentable para dirigir a los usuarios a nuestras aplicaciones por medio de la traducción de nombres de dominio a ips numéricas. En este caso la utilizamos para la redirección de los dominios adquiridos por medio de Namecheap hacia nuestro balanceador de carga.
+
+
+Se crearon dos zonas alojadas
+![image](https://user-images.githubusercontent.com/25576463/197363672-a93291d0-8bed-44f6-9e27-6db8737ad72a.png)
+
+Al crear una zona nos brinda la información necesaria para poder configurarlo en nuestro dominio en Namecheap
+![image](https://user-images.githubusercontent.com/25576463/197363680-8693ea34-97ff-4c3f-b93b-6e3fb8363a46.png)
+
+Finalmente se crea un registro en el cual se configura la redirección del tráfico hacia nuestro balanceador de carga previamente creado:
+![image](https://user-images.githubusercontent.com/25576463/197363710-7fa2802a-e3b1-4c35-9dfb-fde00c982b94.png)
+
+
+
+
+
 
 
