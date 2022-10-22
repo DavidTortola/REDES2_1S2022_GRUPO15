@@ -2,6 +2,8 @@ Universidad de San Carlos de Guatemala \
 Facultad de Ingeniería \
 Escuela de Ciencias y Sistemas \
 Redes de Computadoras 2 \
+Ing. Manuel Fernando López
+Auxiliar Edgar Cil
 Segundo Semestre 2022 
 
 # Proyecto #1 - Fase #1
@@ -74,3 +76,32 @@ sudo cp -a /home/ubuntu/REDES2_1S2022_GRUPO15/Frontend/. /var/www/html/
 ```
 
 Para comprobar que la página esté corriendo correctamente se puede conectarse por medio de un browser a la ip pública de alguna de las máquinas `EC2`, por ejemplo `http://3.145.170.149/`
+
+
+<a  name="LoadBalancer"></a>
+
+## Load Balancer:bar_chart:
+
+Para el balanceo de cargas se utilizó la herramienta de amazon `Load Balancer` la cual nos permite enlazar nuestras máquinas `EC2` y distribuir la carga equitativamente para un mejor tráfico para los clientes, así como mayor resistencia a caídas, ya que si alguna de las máquinas estuviera abajo, se encargaría de distribuir el flujo de carga hacia la otra que esté arriba.
+
+### Las configuraciones realizadas en nuestro balanceador de carga fueron las siguientes:
+
+| ![image](https://user-images.githubusercontent.com/25576463/197363388-850bc124-8161-4d02-b86f-2073d1b21b02.png) | 
+|:--:| 
+| *Se utilizó el balanceador clásico, pero también se puede utilizar un balanceador de aplicaciones* |
+
+
+| ![image](https://user-images.githubusercontent.com/25576463/197363450-9e310620-c00f-4935-84ef-057dc2a13f51.png) | 
+|:--:| 
+| *Nos aseguramos de utilizar siempre los puertos por default, en este caso el 80, posteriormente con certificados de seguridad se modificará para utilizar los puertos seguros 443* |
+
+| ![image](https://user-images.githubusercontent.com/25576463/197363477-024c3828-5ca7-49cf-acbe-1d5f2143d4ef.png) | 
+|:--:| 
+| *Algo muy importante es la comprobación del estado, en este punto se configura la ruta a la cual el balanceador de carga realizará una conexión para confirmar que la página web esté disponible, si no colocamos la correcta no funcionará* |
+
+| ![image](https://user-images.githubusercontent.com/25576463/197363493-2dcd6761-10f1-4269-87d7-2872e2652a9f.png) | 
+|:--:| 
+| *Finalmente se configuran los nodos que conectaremos al balanceador de carga, en este caso nuestras dos máquinas EC2* |
+
+
+
