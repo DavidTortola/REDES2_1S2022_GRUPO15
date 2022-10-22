@@ -23,7 +23,7 @@ Segundo Semestre 2022
 - [Arquitectura del sistema:house:](#Arquitectura)
 - [Máquinas EC2:computer:](#MaquinasEC2)
 - [Load Balancer:bar_chart:](#LoadBalancer)
-- [Dominios (NameCheap):earth_americas:](#Dominios)
+- [Dominios (Namecheap):earth_americas:](#Dominios)
 - [Route 53:globe_with_meridians:](#Route53)
 - [Página web (Frontend y Backend):newspaper:](#Frontend)
 
@@ -102,6 +102,22 @@ Para el balanceo de cargas se utilizó la herramienta de amazon `Load Balancer` 
 | ![image](https://user-images.githubusercontent.com/25576463/197363493-2dcd6761-10f1-4269-87d7-2872e2652a9f.png) | 
 |:--:| 
 | *Finalmente se configuran los nodos que conectaremos al balanceador de carga, en este caso nuestras dos máquinas EC2* |
+
+<a  name="Dominios"></a>
+
+## Dominios (Namecheap):earth_americas:
+
+![image](https://user-images.githubusercontent.com/25576463/197363551-c2469992-1147-444d-9eb5-3af43bcff357.png)
+
+La adquisición de los dominios se realizó por medio de la plataforma Namecheap, la cual nos permitió comprar dos dominios: `ucron-publica.lol` y `ucron-economica.lol`.  Namecheap es una empresa que se dedica a realizar registros de nombres de dominios, y que provee herramientas para compras de dominiosy también web hosting, sin embargo en este caso no la utilizamos para hostear nuestra web ya que se hará por medio de las máquinas AWS EC2.
+
+En la plataforma de Namecheap fue necesario realizar una configuracion de DNS para poder enlazarlo hacia nuestro Route 53:
+
+| ![image](https://user-images.githubusercontent.com/25576463/197363585-44d3d21c-1452-4685-a4dc-36d9617e6d85.png) | 
+|:--:| 
+| ![image](https://user-images.githubusercontent.com/25576463/197363593-66d4402a-343e-4fa5-8486-d1f7eccf334c.png) | 
+| *Esta configuracion nos permite redirigir trafico desde nuestro dominio hacia nuestro balanceador de carga y finalmente a nuestra página web* |
+
 
 
 
