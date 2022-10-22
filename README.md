@@ -2,8 +2,8 @@ Universidad de San Carlos de Guatemala \
 Facultad de Ingeniería \
 Escuela de Ciencias y Sistemas \
 Redes de Computadoras 2 \
-Ing. Manuel Fernando López
-Auxiliar Edgar Cil
+Ing. Manuel Fernando López \
+Auxiliar Edgar Cil \
 Segundo Semestre 2022 
 
 # Proyecto #1 - Fase #1
