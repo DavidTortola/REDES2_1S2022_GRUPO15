@@ -49,5 +49,28 @@ Finalmente, se adquirió 2 dominios por medio de la plataforma `NameCheap`, los 
 
 ## Máquinas EC2:computer:
 
+Se construyeron inicialmente dos máquinas `EC2`, con la posibilidad de poder agregar más máquinas en un futuno cercano si fuera necesario. Estas máquinas EC2 están corriendo el sistema operativo `Ubuntu Server 22.04 LTS` ya que pertenece a la capa gratuita, proveyendo un mejor costo-beneficio para la empresa. También se utilizó la herramienta `Apache Server` para poner a disposición la página web de la empresa.
 
+### En las máquinas `EC2` se realizaron las siguientes configuraciones:
 
+Primero se establece un password personalizado para mayor seguridad
+```
+sudo su -
+passwd ubuntu
+```
+
+Después se realiza una actualización de paquetes y se instala apache
+```
+sudo apt update
+sudo apt install apache2
+sudo systemctl status apache2
+```
+
+Finalmente se copia el repositorio donde está ubicada la página web y se copia en la ubicación donde está el servidor de Apache
+```
+cd /home/ubuntu/
+git clone https://github.com/DavidTortola/REDES2_1S2022_GRUPO15.git
+sudo cp -a /home/ubuntu/REDES2_1S2022_GRUPO15/Frontend/. /var/www/html/
+```
+
+Para comprobar que la página esté corriendo correctamente se puede conectarse por medio de un browser a la ip pública de alguna de las máquinas `EC2`, por ejemplo `http://3.145.170.149/`
