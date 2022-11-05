@@ -30,21 +30,22 @@ Segundo Semestre 2022
 
 ## Introduccion:scroll:
 
-La empresa Ucron solicita la creación de una página web para dos de sus departamentos más importantes en el país, esto para poder darse a conocer tanto local como globalmente y poder administrar sus recursos. Se solicita realizarlo en la nube y también utilizar un administrador de dominios para que su página web esté posicionada en los primeros puestos de búsqueda. Los dos departamentos de la empresa son el departamento de `función pública` y el `departamento de desarrollo económico`.
+El país de Ucron ahora cuenta con una página para darse a conocer al mundo; sin embargo, aún no cuentan con la seguridad para prevenir futuros ataques
+cibernéticos y el servicio no cumple con la disponibilidad adecuada para cubrir la demanda de peticiones realizadas.
+Por ello le solicita nuevamente que realice la configuración necesaria dentro de la nube para salvaguardar la información con la que cuentan dentro de su gobierno y restringir el acceso a la misma utilizando los servicios que proporciona AWS.
 
 
 <a  name="Arquitectura"></a>
 
 ## Arquitectura del sistema:house:
 
-El sistema de la empresa Ucron se construyó dentro del ecosistema de `AWS`, utilizando las diferentes herramientas que Amazon provee para construir la arquitectura deseada. Para administrar el frontend y el backend se decidió utilizar máquinas `EC2`, creando 2 máquinas para mayor disponibilidad, ya que estas estarán corriendo réplicas del mismo sistema.
+El sistema de la empresa Ucron se construyó dentro del ecosistema de `AWS`, utilizando las diferentes herramientas que Amazon provee para construir la arquitectura deseada. Para administrar el frontend y el backend se decidió utilizar máquinas `EC2`, creando 5 máquinas para mayor disponibilidad, ya que estas estarán corriendo réplicas del mismo sistema.
 
 Posteriormente, se utilizó la herramienta `Load Balancer` de AWS para poder realizar la administración de las cargas que reciben las máquinas `EC2`, permitiendo de esta manera que el sistema sea mucho más resistente a caídas, también permitiendo a futuro poder adquirir más máquinas en diferentes regiones para soportar aún más tráfico.
 
 Finalmente, se adquirió 2 dominios por medio de la plataforma `NameCheap`, los cuales son `ucron-economica.lol` y `ucron-publica.lol` para ambos departamentos de la empresa. Estos dominios se enlazan a nuestro balanceador de cargas utilzando la herramienta de `Amanzon Route 53`, la cual nos permite configurar nuestros dominios y redigir el tráfico hacia nuestras máquinas `EC2`.
 
-![image](https://user-images.githubusercontent.com/25576463/197362876-ec65e469-9509-4f9b-8338-8df45a08a9ec.png)
-
+![image](https://user-images.githubusercontent.com/24425432/200105813-1fe4803f-a04e-4219-9b1b-9347660c73f1.png)
 
 <a  name="MaquinasEC2"></a>
 
@@ -134,8 +135,24 @@ Al crear una zona nos brinda la información necesaria para poder configurarlo e
 Finalmente se crea un registro en el cual se configura la redirección del tráfico hacia nuestro balanceador de carga previamente creado:
 ![image](https://user-images.githubusercontent.com/25576463/197363710-7fa2802a-e3b1-4c35-9dfb-fde00c982b94.png)
 
+### HTTPS
+Para la implementación de https se utilizo un certificado gratuito. 
+## Seguridad
+Se crearon las políticas de seguridad para el tráfico a través de la creación de ACLs y/o Security Groups. Este paso es de vital importancia para agregar capas extra de seguridad dentro de la VPC.
+![image](https://user-images.githubusercontent.com/24425432/200106113-82ffd97d-eb48-47bb-b112-0d86e4d26c15.png)
 
+## Nombres de Dominio
+Se crearon nombres de dominio, que permitan acceder a la API, nombre de dominio principal y un nombre de dominio secundario que funciona como un alias para los dominios principales.
+ * grupo#-fp-api.tk (principal)
+ * grupo#-de-api.tk (principal)
+ * grupo#-fp-api.ml (secundario)
+ * grupo#-de-api.ml (secundario)
+ 
+La página puede ser accedida desde cualquiera de los dos dominios definidos para cada departamento.
+Acceso a internet para las instancias dentro de las subredes privadas
+Debido a que las instancias se encuentran en una subred privada, estas no poseen acceso a internet. Esto imposibilita la capacidad de actualizar o instalar paquete en las instancias. Es por ello que se agrego un NAT Gateway, y realizaron las configuraciones necesarias para garantizar el acceso a internet de manera segura para las instancias.
 
+![image](https://user-images.githubusercontent.com/24425432/200106122-3e0dcf4b-0c86-4a78-88e9-8707da200e90.png)
 
 
 
