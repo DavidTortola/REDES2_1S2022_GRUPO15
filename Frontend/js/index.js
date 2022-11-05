@@ -19,7 +19,8 @@ function obtenerDatos() {
     fetch("http://10.0.26.48/user/codigoUsuario", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        timeout: 5000
     }).then(res => {
         console.log("Request complete! response:", res);
     });
