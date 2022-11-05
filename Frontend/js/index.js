@@ -16,7 +16,7 @@ function obtenerDatos() {
 
 
     let data = { element: "barium" };
-    fetch("http://10.0.26.48/user/codigoUsuario", {
+    fetch("http://10.0.133.67/user/codigoUsuario", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
