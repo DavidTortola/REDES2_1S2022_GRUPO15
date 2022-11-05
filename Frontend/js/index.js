@@ -1,4 +1,4 @@
-function Login() {
+function obtenerDatos() {
     console.log("llamando al login")
     var usr = document.getElementById("usr").value;
     var pass = document.getElementById("pass").value;
