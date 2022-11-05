@@ -2,8 +2,8 @@ Universidad de San Carlos de Guatemala \
 Facultad de Ingeniería \
 Escuela de Ciencias y Sistemas \
 Redes de Computadoras 2 \
-Ing. Manuel Fernando López
-Auxiliar Edgar Cil
+Ing. Manuel Fernando López \
+Auxiliar Edgar Cil \
 Segundo Semestre 2022 
 
 # Proyecto #1 - Fase #1
@@ -12,9 +12,8 @@ Segundo Semestre 2022
 | No. | Integrantes - Grupo #15          | Carnet    |
 |-----|----------------------------------|-----------|
 | 1   | Osmel David Tórtola Tistoj       | 201404218 |
-| 2   | Erick Antonio Valenzuela Rivas   |           |
-| 3   | Fernando Alberto Ambrosio Aleman |           |
-| 4   |                                  |           |
+| 2   | Erick Antonio Valenzuela Rivas   | 201404106 |
+| 3   | Fernando Alberto Ambrosio Aleman | 201404319 |
   
   
 ## Índice
