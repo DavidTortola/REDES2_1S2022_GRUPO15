@@ -1,7 +1,7 @@
 function obtenerDatos() {
     console.log("llamando al login")
     $.ajax({
-      url: "http://18.119.139.84:4000/user/codigoUsuario",
+      url: "http://10.0.26.48:4000/user/codigoUsuario",
       dataType: "text",
       type: "post",
       contentType: "application/json; charset=utf-8",
