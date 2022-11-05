@@ -1,11 +1,12 @@
-'use strict';
 const express = require('express');
 var cors = require('cors');
 const app = express();
 const port = 80;
 
 app.use(cors());
-
+app.use(cors({
+    origin: '*'
+}));
 
 
 //routes
