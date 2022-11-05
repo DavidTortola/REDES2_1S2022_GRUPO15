@@ -143,10 +143,11 @@ Se crearon las políticas de seguridad para el tráfico a través de la creació
 
 ## Nombres de Dominio
 Se crearon nombres de dominio, que permitan acceder a la API, nombre de dominio principal y un nombre de dominio secundario que funciona como un alias para los dominios principales.
-• grupo#-fp-api.tk (principal)
-• grupo#-de-api.tk (principal)
-• grupo#-fp-api.ml (secundario)
-• grupo#-de-api.ml (secundario)
+ * grupo#-fp-api.tk (principal)
+ * grupo#-de-api.tk (principal)
+ * grupo#-fp-api.ml (secundario)
+ * grupo#-de-api.ml (secundario)
+ 
 La página puede ser accedida desde cualquiera de los dos dominios definidos para cada departamento.
 Acceso a internet para las instancias dentro de las subredes privadas
 Debido a que las instancias se encuentran en una subred privada, estas no poseen acceso a internet. Esto imposibilita la capacidad de actualizar o instalar paquete en las instancias. Es por ello que se agrego un NAT Gateway, y realizaron las configuraciones necesarias para garantizar el acceso a internet de manera segura para las instancias.
