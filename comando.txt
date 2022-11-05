@@ -1,0 +1,1 @@
+sudo cp -a /home/ubuntu/REDES2_1S2022_GRUPO15/Frontend/. /var/www/html/
