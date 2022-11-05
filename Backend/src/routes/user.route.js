@@ -4,6 +4,6 @@ const ctrl = require("../controllers/user.controller");
 
 
 
-router.post("/codigoUsuario", ctrl.codigoUsuario);
+router.get("/codigoUsuario", ctrl.codigoUsuario);
 
 module.exports = router;
